@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>WEB222 Store</title>
+    <link rel="stylesheet" href="style.css" type="text/css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="header">
+          <div class="kitchen-store"><span>DZ</span> KITCHEN STORE</div>
+          <a href="./"><img class="logo" alt="kitchen store" src="./images/logo.svg"/></a>
+          <form action="./index.html">
+            <input type="submit" value="Home Page" />
+          </form>
+        </div>
+        <div class="menu">
+          <div id="cookwareBtn"><a>Cookware</a></div>
+          <div id="smallApplianceBtn"><a>Small Appliance</a></div>
+          <div id="knivesBtn"><a>Knives</a></div>
+        </div>
+        <div class="contact-header-img">
+          <h1 class="contact-slogan"><span>Keep</span> in Touch</h1>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <div class="contact-us container">
+        <h2 class="title">Contact Us</h2>
+        <div class="contact-us-wrap">
+          <form id="contact-form" action="https://httpbin.org/post" method="POST">
+            <div class="contact-row">
+              <div class="contact-row-item">
+                <!-- full name -->
+                <label class="contact-label" for="contact-fullname"><span>*</span>Full Name</label>
+                <input
+                  id="contact-fullname"
+                  class="form-control"
+                  name="name"
+                  autocomplete="name"
+                  type="text"
+                  tabindex="1"
+                  placeholder="Jack Jones"
+                  required
+                  autofocus
+                />
+              </div>
+              <div class="contact-row-item">
+                <!-- contact form email address -->
+                <label class="contact-label" for="contact-email"><span>*</span>Email</label>
+                <input
+                  id="contact-email"
+                  class="form-control"
+                  name="email"
+                  autocomplete="email"
+                  placeholder="JackJones@gmail.com"
+                  type="email"
+                  tabindex="2"
+                  required
+                />
+              </div>
+            </div>
+
+            <div class="contact-row">
+              <div class="contact-row-item">
+                <!-- address -->
+                <label class="contact-label" for="address"><span>*</span>Street Address</label>
+                <input
+                  id="address"
+                  class="form-control"
+                  name="address"
+                  type="text"
+                  placeholder="123 Main st."
+                  autocomplete="street-address"
+                  tabindex="3"
+                  required
+                />
+              </div>
+              <div class="contact-row-item">
+                <label class="contact-label" for="city"><span>*</span>City</label>
+                <input
+                  list="city"
+                  class="form-control"
+                  name="city"
+                  type="text"
+                  required
+                  tabindex="4"
+                />
+                <datalist id="city">
+                  <option value="Toronto" selected> </option>
+                  <option value="Montréal"> </option>
+                  <option value="Vancouver"> </option>
+                  <option value="Calgary"> </option>
+                  <option value="Edmonton"> </option>
+                </datalist>
+              </div>
+              <div class="contact-row-item">
+                <label class="contact-label" for="postalcode"><span>*</span>Postal Code</label>
+                <input
+                  id="address"
+                  class="form-control"
+                  name="postalcode"
+                  type="text"
+                  autocomplete="postal-code"
+                  tabindex="5"
+                  placeholder="A1A 2B2"
+                  tabindex="5"
+                  pattern="^[A-Za-z]\d[A-Za-z][ -]?\d[A-Za-z]\d$"
+                  required
+                />
+              </div>
+            </div>
+
+            <div class="contact-row contact-row-about">
+              <label class="contact-label"><span>*</span>What is this about?</label>
+              <div class="form-control-radio">
+                <input
+                  id="question-radio"
+                  class="form-check"
+                  type="radio"
+                  name="what"
+                  value="Question"
+                  tabindex="6"
+                  checked
+                />
+                <label id="question-text" class="form-check-label" for="question-radio"
+                  >Question</label
+                >
+              </div>
+              <div class="form-control-radio">
+                <input
+                  id="comment-radio"
+                  class="form-check-input"
+                  type="radio"
+                  name="what"
+                  value="Comment"
+                  tabindex="7"
+                />
+                <label id="comment-text" class="form-check-label" for="comment-radio"
+                  >Comment</label
+                >
+              </div>
+              <div class="form-control-radio">
+                <input
+                  id="order-radio"
+                  class="form-check-input"
+                  type="radio"
+                  name="what"
+                  value="Order Problem"
+                  tabindex="8"
+                />
+                <label id="order-text" class="form-check-label" for="order-radio"
+                  >Order Problem</label
+                >
+              </div>
+            </div>
+
+            <div class="contact-row contact-row-number">
+              <div id="order-problem-field">
+                <label class="contact-label" for="Order Number"
+                  ><span>*</span>Please enter your 10-digit order number:</label
+                >
+                <input
+                  id="order-number-radio"
+                  class="form-control"
+                  type="text"
+                  name="orderNumber"
+                  pattern="\d{10}"
+                  placeholder="1234567890"
+                  tabindex="9"
+                  required
+                />
+              </div>
+            </div>
+
+            <div class="contact-row">
+              <textarea
+                id="message"
+                name="message"
+                rows="10"
+                placeholder="Please share with us"
+                tabindex="10"
+                autocomplete="off"
+                required
+              ></textarea>
+            </div>
+            <input type="submit" name="submit" value="submit" tabindex="11" />
+            <div class="hidden">
+              <input id="myname" name="myname" type="hidden" value="David Zhu" tabindex="12" />
+            </div>
+          </form>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <div class="container" id="footer">
+        <div class="footer-left">
+          <div class="footer-category">
+            <div class="footer-category-item">
+              <h2 class="footer-title"><a>Cookware</a></h2>
+              <ul>
+                <li>Staub</li>
+                <li>Le Creuset</li>
+                <li>All-Clad</li>
+              </ul>
+            </div>
+            <div class="footer-category-item">
+              <h2 class="footer-title"><a>Small Appliance</a></h2>
+              <ul>
+                <li>Smeg</li>
+                <li>Breville</li>
+                <li>KitchenAid</li>
+                <li>Vitamix</li>
+              </ul>
+            </div>
+            <div class="footer-category-item">
+              <h2 class="footer-title"><a>Knives</a></h2>
+              <ul>
+                <li>Shun</li>
+              </ul>
+            </div>
+          </div>
+
+          <div>
+            <ul class="contact-social">
+              <li>
+                <a href="https://www.facebook.com" target="_blank"
+                  ><i class="fab fa-facebook-square"></i
+                ></a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/" target="_blank"
+                  ><i class="fab fa-instagram-square"></i
+                ></a>
+              </li>
+              <li>
+                <a href="https://www.tiktok.com/en/" target="_blank"
+                  ><i class="fab fa-tiktok"></i
+                ></a>
+              </li>
+            </ul>
+            <h5 class="contact-info">Phone: 255-522-255</h5>
+            <h5 class="contact-info">Email: dz@gmail.com</h5>
+          </div>
+        </div>
+        <div class="footer-right">
+          <div>
+            <a href="./"><img class="footer-logo" alt="kitchen store" src="./images/logo.svg"/></a>
+            <div class="kitchen-store footer-kitchen-store"><span>DZ</span> KITCHEN STORE</div>
+          </div>
+          <div>
+            <!-- final: email subscription -->
+            <div class="sign-up-email">
+              <h3>Join our email list: <br /></h3>
+            </div>
+            <form action="https://formspree.io/f/xyybnyjk" method="POST">
+              <div class="sign-up-form">
+                <input
+                  class="footer-subscribe"
+                  id="sign-up-email"
+                  name="email"
+                  autocomplete="email"
+                  type="email"
+                  placeholder="JackJones@gmail.com"
+                  tabindex="1"
+                  required
+                />
+                <input type="submit" name="subscribe" value="Subscribe" tabindex="2" />
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <div>
+      <div class="copy-term container">
+        <div>© 2020 All Rights Reserved.</div>
+        <div><a>Terms</a> | <a>Privacy Policy</a></div>
+      </div>
+    </div>
+
+    <script src="./script-contact.js"></script>
+
+    <!--  <script>
+      window.onload = function() {
+       let form=document.querySelector("#contact-form")
+        form.onsubmit - function(event) {
+          if(!form.checkValidity()){
+
+          }
+        };
+      };
+    </script> -->
+  </body>
+</html>
