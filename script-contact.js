@@ -1,29 +1,18 @@
-let questionRadio = document.querySelector('#question-radio');
-let questionText = document.querySelector('#question-text');
-let commentRadio = document.querySelector('#comment-radio');
-let commentText = document.querySelector('#comment-text');
-let orderRadio = document.querySelector('#order-radio');
-let orderText = document.querySelector('#order-text');
-let orderProblemTextField = document.querySelector('#order-problem-field');
+const arrNones = ['#question-radio', '#question-text', '#comment-radio', '#comment-text'];
+const arrDisplays = ['#order-radio', '#order-text'];
 let contactRowNum = document.querySelector('.contact-row-number');
+let orderNumberInput = document.querySelector('#order-problem-field #order-number-radio');
 
-questionRadio.addEventListener('click', function() {
-  orderProblemTextField.style.display = 'none';
+arrNones.map(arrNone => {
+  document.querySelector(arrNone).addEventListener('click', function() {
+    contactRowNum.style.display = 'none';
+    orderNumberInput.removeAttribute('required');
+  });
 });
-questionText.addEventListener('click', function() {
-  orderProblemTextField.style.display = 'none';
-});
-commentRadio.addEventListener('click', function() {
-  orderProblemTextField.style.display = 'none';
-});
-commentText.addEventListener('click', function() {
-  orderProblemTextField.style.display = 'none';
-});
-orderRadio.addEventListener('click', function() {
-  orderProblemTextField.style.display = 'block';
-  contactRowNum.style.display = 'block';
-});
-orderText.addEventListener('click', function() {
-  orderProblemTextField.style.display = 'block';
-  contactRowNum.style.display = 'block';
+
+arrDisplays.map(arrDisplay => {
+  document.querySelector(arrDisplay).addEventListener('click', function() {
+    contactRowNum.style.display = 'block';
+    orderNumberInput.setAttribute('required', 'required');
+  });
 });

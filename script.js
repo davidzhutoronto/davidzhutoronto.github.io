@@ -176,7 +176,7 @@ function load(arr) {
 
     wrap.appendChild(content);
     list.appendChild(wrap);
-    container.appendChild(list);
+    container && container.appendChild(list);
   });
 }
 
@@ -212,7 +212,8 @@ knivesBtn.addEventListener('click', function() {
   load(knivesArr);
 });
 
-allBtn.addEventListener('click', function() {
-  clear();
-  load(data);
-});
+allBtn &&
+  allBtn.addEventListener('click', function() {
+    clear();
+    load(data);
+  });
